@@ -256,7 +256,7 @@ public class Advertisement {
         {
           uuid[i] = next[i+5];
         }
-        int major = next[21] << 8;
+        int major = next[21] << 8; 
         major += next[22];
         int minor = next[23] << 8;
         minor += next[24];
