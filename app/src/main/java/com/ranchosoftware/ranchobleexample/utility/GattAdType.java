@@ -5,6 +5,8 @@ package com.ranchosoftware.ranchobleexample.utility;
  */
 public enum GattAdType {
 
+  // Values take from https://www.bluetooth.com/specifications/assigned-numbers/generic-access-profile
+
 
   Flags((byte) 0x01),
   IncompleteListof16_bitServiceClassUUIDs((byte) 0x02),
@@ -43,15 +45,12 @@ public enum GattAdType {
   ThreeDInformationData((byte) 0x3D),
   ManufacturerSpecificData ((byte) 0xFF);
 
-
   private final byte code ;
   GattAdType(byte code){
     this.code = code;
   }
 
-
-
-  public int getCode(){
+  public byte getCode(){
     return code;
   }
 
@@ -62,7 +61,6 @@ public enum GattAdType {
       if (type.getCode() == code)
         return type;
     }
-
     return null;
   }
 

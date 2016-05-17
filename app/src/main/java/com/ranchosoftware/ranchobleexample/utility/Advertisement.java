@@ -38,8 +38,6 @@ public class Advertisement {
   private List<List<Byte>> listof32_bitServiceSolicitationUUIDs = new ArrayList<List<Byte>>();
   private List<List<Byte>> listof128_bitServiceSolicitationUUIDs = new ArrayList<List<Byte>>();
 
-
-
   private String shortenedLocalName = "";
   private String completeLocalName = "";
 
@@ -69,7 +67,6 @@ public class Advertisement {
   HashMap<GattAdType, Boolean> containedCodes = new HashMap<GattAdType, Boolean>();
 
 
-
   private byte[] simplePairingHashC;
   private byte[] simplePairingHashC_192;
   private byte[] simplePairingRandomizerR;
@@ -78,7 +75,6 @@ public class Advertisement {
   private byte[] SecurityManagerTKValue;
   private byte[] SecurityManagerOutofBandFlags;
   private byte[] SlaveConnectionIntervalRange;
-
   private byte[] ServiceData;
   private byte[] ServiceData_16_bitUUID;
   private byte[] ServiceData_32_bitUUID;
@@ -92,9 +88,6 @@ public class Advertisement {
   private byte[] SimplePairingHashC_256;
   private byte[] SimplePairingRandomizerR_256;
   private byte[] ThreeDInformationData;
-
-
-
 
   private byte rawAdvertisement[];
   private int position;
@@ -263,10 +256,10 @@ public class Advertisement {
         {
           uuid[i] = next[i+5];
         }
-        int major = next[22] << 8;
-        major += next[21];
-        int minor = next[24] << 8;
-        minor += next[23];
+        int major = next[21] << 8;
+        major += next[22];
+        int minor = next[23] << 8;
+        minor += next[24];
         ByteBuffer bb = ByteBuffer.wrap(uuid);
         long first = bb.getLong();
         long second = bb.getLong();
